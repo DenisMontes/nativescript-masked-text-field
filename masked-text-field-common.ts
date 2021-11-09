@@ -50,7 +50,7 @@ export abstract class MaskedTextFieldBase extends TextField implements MaskedTex
         const newMaskedValue = this._getNewMaskedValue(start, start + previousCharactersCount, unmaskedChangedValue, isBackwardsIn);
 
         // NOTE: Do not set directly the owner.text property as this will trigger an unnecessary coerce value and masking/unmasking!            
-        this._setNativeText(newMaskedValue);
+        this._setNativeText(true);
         textProperty.nativeValueChange(this, newMaskedValue);
 
         let newCaretPosition = this._getNextRegExpToken(start, isBackwardsIn);
@@ -154,7 +154,7 @@ export abstract class MaskedTextFieldBase extends TextField implements MaskedTex
         return currentValueSplit.join("");        
     }
 
-    protected abstract _setNativeText(value: string);
+    public abstract _setNativeText(reset: boolean);
 
     private _getNextRegExpToken(start: number, isBackwardsIn?: boolean) {
         const step = (isBackwardsIn ? -1 : 1);

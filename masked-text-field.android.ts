@@ -55,16 +55,15 @@ export class MaskedTextField extends MaskedTextFieldBase {
     }
 
     public [textProperty.setNative](value: string) {
-        this._setNativeText(value);
-    }
-
-    public _setNativeText(value: string) {
         const stringValue = (value === null || value === undefined) ? "" : value.toString();
         const transformedText = getTransformedText(stringValue, this.textTransform);
-
+    
         this._isChangingNativeTextIn = true;        
         this.nativeView.setText(transformedText);
         this._isChangingNativeTextIn = false;
+    }
+
+    public _setNativeText(reset: boolean) {
     }
 
     public _setInputType(inputType: number) {

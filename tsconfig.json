@@ -6,21 +6,25 @@
         "removeComments": true,
         "declaration": false,
         "experimentalDecorators": true,
+        "skipLibCheck": true,
         "target": "es5",
         "module": "commonjs",
         "outDir": "bin/dist",
         "lib": ["es6", "dom"],
+        "types": ["node"],
         "rootDir": ".",
         "baseUrl": ".",
         "paths": {
             "*": [
-            "./node_modules/tns-core-modules/*",
+            "./node_modules/@nativescript/core/*",
             "./node_modules/*"
             ]
         }
     },
+    "include": ["angular/*","./*"],
     "exclude": [
         "node_modules", 
+        "node_modules/@nativescript/angular/*", 
         "demo", 
         "demo-ng", 
         "bin"

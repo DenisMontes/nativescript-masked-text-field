@@ -32,10 +32,6 @@ export class MaskedTextField extends MaskedTextFieldBase {
     }
 
     public [textProperty.setNative](value: string) {
-        this._setNativeText(value);
-    }
-
-    public _setNativeText(value: string) {
         const style = this.style;
 
         const dict = new Map<string, any>();
@@ -77,6 +73,10 @@ export class MaskedTextField extends MaskedTextFieldBase {
             this.nativeView.attributedText = undefined;
             this.nativeView.text = source;
         }
+    }
+
+    public _setNativeText(reset: boolean) {
+        
     }
 }
 @ObjCClass(UITextFieldDelegate)

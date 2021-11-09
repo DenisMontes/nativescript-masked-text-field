@@ -16,8 +16,8 @@ limitations under the License.
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
-import { isKnownView, registerElement } from "nativescript-angular/element-registry";
-import { NativeScriptFormsModule } from "nativescript-angular/forms";
+//import { isKnownView, registerElement } from "nativescript-angular/element-registry";
+import { isKnownView, registerElement, NativeScriptFormsModule } from "@nativescript/angular";
 
 import { MaskedTextValueAccessor } from "./masked-text-value-accessor";
 
